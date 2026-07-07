@@ -4,7 +4,7 @@ A portfolio of end-to-end data science, machine learning, and analytics projects
 
 Each notebook covers a full workflow: data cleaning, exploration, modeling, and evaluation.
 
-> **Portfolio:** [wwwdelademdagadu.com) · **LinkedIn:** [/in/princessdelademdagadu](https://linkedin.com/in/princessdelademdagadu)
+> **Portfolio:** wwwdelademdagadu.com) · **LinkedIn:** [/in/princessdelademdagadu](https://linkedin.com/in/princessdelademdagadu)
 
 ---
 
