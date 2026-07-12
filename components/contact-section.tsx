@@ -2,32 +2,34 @@
 
 import { useState } from 'react'
 import { ArrowUpRight, Code2, Download, ExternalLink, Mail } from 'lucide-react'
-
-const links = [
-  {
-    label: 'Email',
-    value: 'princez.dagadu@gmail.com',
-    href: 'mailto:princez.dagadu@gmail.com',
-    icon: Mail,
-  },
-  {
-    label: 'LinkedIn',
-    value: '/in/princessdelademdagadu',
-    href: 'https://linkedin.com/in/princessdelademdagadu',
-    icon: ExternalLink,
-  },
-  {
-    label: 'GitHub',
-    value: 'delademdagadu/Projects',
-    href: 'https://github.com/delademdagadu/Projects',
-    icon: Code2,
-  },
-]
+import { useLanguage } from '@/components/language-provider'
 
 export function ContactSection() {
+  const { t } = useLanguage()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+
+  const links = [
+    {
+      label: t.contact.emailLabel,
+      value: 'princez.dagadu@gmail.com',
+      href: 'mailto:princez.dagadu@gmail.com',
+      icon: Mail,
+    },
+    {
+      label: 'LinkedIn',
+      value: '/in/princessdelademdagadu',
+      href: 'https://linkedin.com/in/princessdelademdagadu',
+      icon: ExternalLink,
+    },
+    {
+      label: 'GitHub',
+      value: 'delademdagadu/Projects',
+      href: 'https://github.com/delademdagadu/Projects',
+      icon: Code2,
+    },
+  ]
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -41,12 +43,10 @@ export function ContactSection() {
       <div className="mx-auto grid max-w-5xl gap-12 px-6 py-20 lg:grid-cols-2 lg:gap-16">
         <div>
           <h2 className="text-2xl font-medium tracking-tight text-foreground">
-            {"Let's work together"}
+            {t.contact.title}
           </h2>
           <p className="mt-3 max-w-md text-pretty leading-relaxed text-muted-foreground">
-            {
-              "I'm open to data analyst, data science, and marketing analytics roles, plus freelance projects. Based in Berlin — the fastest way to reach me is email."
-            }
+            {t.contact.body}
           </p>
 
           <ul className="mt-8 space-y-3">
@@ -74,7 +74,7 @@ export function ContactSection() {
 
           <div className="mt-8">
             <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              Download CV
+              {t.contact.downloadCv}
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -83,7 +83,7 @@ export function ContactSection() {
                 className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
               >
                 <Download className="size-4" />
-                English (PDF)
+                {t.contact.cvEnglish}
               </a>
               <a
                 href="/princess-dagadu-lebenslauf-de.pdf"
@@ -91,7 +91,7 @@ export function ContactSection() {
                 className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
               >
                 <Download className="size-4" />
-                Deutsch (PDF)
+                {t.contact.cvGerman}
               </a>
             </div>
           </div>
@@ -107,7 +107,7 @@ export function ContactSection() {
                 htmlFor="name"
                 className="text-sm font-medium text-foreground"
               >
-                Name
+                {t.contact.formName}
               </label>
               <input
                 id="name"
@@ -116,7 +116,7 @@ export function ContactSection() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground outline-none transition-colors focus:border-ring focus:ring-2 focus:ring-ring/20"
-                placeholder="Your name"
+                placeholder={t.contact.formNamePlaceholder}
               />
             </div>
             <div className="grid gap-1.5">
@@ -124,7 +124,7 @@ export function ContactSection() {
                 htmlFor="email"
                 className="text-sm font-medium text-foreground"
               >
-                Email
+                {t.contact.formEmail}
               </label>
               <input
                 id="email"
@@ -133,7 +133,7 @@ export function ContactSection() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground outline-none transition-colors focus:border-ring focus:ring-2 focus:ring-ring/20"
-                placeholder="you@company.com"
+                placeholder={t.contact.formEmailPlaceholder}
               />
             </div>
             <div className="grid gap-1.5">
@@ -141,7 +141,7 @@ export function ContactSection() {
                 htmlFor="message"
                 className="text-sm font-medium text-foreground"
               >
-                Message
+                {t.contact.formMessage}
               </label>
               <textarea
                 id="message"
@@ -150,14 +150,14 @@ export function ContactSection() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 className="resize-none rounded-md border border-input bg-background px-3 py-2 text-sm text-foreground outline-none transition-colors focus:border-ring focus:ring-2 focus:ring-ring/20"
-                placeholder="Tell me a bit about the role or project…"
+                placeholder={t.contact.formMessagePlaceholder}
               />
             </div>
             <button
               type="submit"
               className="inline-flex items-center justify-center gap-1.5 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
             >
-              Send message
+              {t.contact.formSubmit}
               <ArrowUpRight className="size-4" />
             </button>
           </div>

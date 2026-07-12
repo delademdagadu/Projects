@@ -1,83 +1,60 @@
-import { ArrowUpRight, Code2 } from 'lucide-react'
+'use client'
 
-type Project = {
-  title: string
-  blurb: string
-  image: string
-  tags: string[]
-  metric: string
-  demoHref: string
-  codeHref: string
-}
+import { ArrowUpRight, Code2 } from 'lucide-react'
+import { useLanguage } from '@/components/language-provider'
 
 const REPO = 'https://github.com/delademdagadu/Projects/blob/main'
 const NBVIEWER = 'https://nbviewer.org/github/delademdagadu/Projects/blob/main'
 
-const projects: Project[] = [
+// Language-neutral data, aligned by index with the translated project copy.
+const projectMeta = [
   {
-    title: 'Deep Learning Pipeline for Pneumonia Detection',
-    blurb:
-      'Built an end-to-end convolutional neural network pipeline to classify chest X-rays, from image preprocessing and augmentation through model training and evaluation.',
     image: '/images/project-pneumonia.png',
     tags: ['Python', 'TensorFlow/Keras', 'CNN', 'Computer Vision'],
-    metric: 'Medical imaging classification with a CNN',
-    demoHref: `${NBVIEWER}/Deep%20Learning%20Pipeline%20for%20Pneumonia%20Detection.ipynb`,
-    codeHref: `${REPO}/Deep%20Learning%20Pipeline%20for%20Pneumonia%20Detection.ipynb`,
+    file: 'Deep%20Learning%20Pipeline%20for%20Pneumonia%20Detection.ipynb',
   },
   {
-    title: 'Binary Sentiment Analysis using NLP Models',
-    blurb:
-      'Cleaned and vectorized text data, then trained and compared NLP models to classify sentiment as positive or negative.',
     image: '/images/project-nlp.png',
     tags: ['Python', 'NLP', 'scikit-learn', 'NLTK'],
-    metric: 'Text classification across NLP model variants',
-    demoHref: `${NBVIEWER}/Binary%20Sentiment%20Analysis%20using%20NLP%20Models%20.ipynb`,
-    codeHref: `${REPO}/Binary%20Sentiment%20Analysis%20using%20NLP%20Models%20.ipynb`,
+    file: 'Binary%20Sentiment%20Analysis%20using%20NLP%20Models%20.ipynb',
   },
   {
-    title: 'Customer Behavior Analysis & Personalization',
-    blurb:
-      'Explored customer behavior for a fashion e-commerce platform and built a personalization approach to surface relevant products.',
     image: '/images/project-churn.png',
     tags: ['Python', 'Pandas', 'Segmentation', 'Recommendation'],
-    metric: 'Personalization for a fashion e-commerce platform',
-    demoHref: `${NBVIEWER}/Customer%20Behavior%20Analysis%20and%20Personalization%20for%20a%20Fashion%20E-Commerce%20Platform.ipynb`,
-    codeHref: `${REPO}/Customer%20Behavior%20Analysis%20and%20Personalization%20for%20a%20Fashion%20E-Commerce%20Platform.ipynb`,
+    file: 'Customer%20Behavior%20Analysis%20and%20Personalization%20for%20a%20Fashion%20E-Commerce%20Platform.ipynb',
   },
   {
-    title: 'End-to-End Machine Learning Pipeline',
-    blurb:
-      'Assembled a complete ML workflow — data cleaning, feature engineering, model training, and evaluation — into a single reproducible pipeline.',
     image: '/images/project-forecast.png',
     tags: ['Python', 'scikit-learn', 'Feature Engineering', 'Pipelines'],
-    metric: 'Reproducible workflow from raw data to model',
-    demoHref: `${NBVIEWER}/End_to_end_Machine_Learning_Pipeline.ipynb`,
-    codeHref: `${REPO}/End_to_end_Machine_Learning_Pipeline.ipynb`,
+    file: 'End_to_end_Machine_Learning_Pipeline.ipynb',
   },
   {
-    title: 'Exploratory Data Analysis: Classic Cars',
-    blurb:
-      'Analyzed a classic-car dataset for restoration and auction insights, using visualization and correlation analysis to surface value drivers.',
     image: '/images/project-eda.png',
     tags: ['Python', 'Pandas', 'Matplotlib', 'EDA'],
-    metric: 'Insight-driven EDA for restoration & auction',
-    demoHref: `${NBVIEWER}/Exploratory_Data_Analysis_of_Classic_Cars_for_Restoration_and_Auction.ipynb`,
-    codeHref: `${REPO}/Exploratory_Data_Analysis_of_Classic_Cars_for_Restoration_and_Auction.ipynb`,
+    file: 'Exploratory_Data_Analysis_of_Classic_Cars_for_Restoration_and_Auction.ipynb',
   },
 ]
 
 export function ProjectsSection() {
+  const { t } = useLanguage()
+
+  const projects = t.projects.items.map((item, i) => ({
+    ...item,
+    ...projectMeta[i],
+    demoHref: `${NBVIEWER}/${projectMeta[i].file}`,
+    codeHref: `${REPO}/${projectMeta[i].file}`,
+  }))
+
   return (
     <section id="work" className="border-b border-border/60">
       <div className="mx-auto max-w-5xl px-6 py-20">
         <div className="mb-10 flex items-end justify-between gap-4">
           <div>
             <h2 className="text-2xl font-medium tracking-tight text-foreground">
-              Selected work
+              {t.projects.title}
             </h2>
             <p className="mt-2 max-w-xl text-pretty leading-relaxed text-muted-foreground">
-              A few projects that show how I move from a question to a shipped,
-              measurable result.
+              {t.projects.subtitle}
             </p>
           </div>
         </div>
@@ -127,7 +104,7 @@ export function ProjectsSection() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 font-medium text-foreground transition-colors hover:text-primary"
                   >
-                    View notebook
+                    {t.projects.viewNotebook}
                     <ArrowUpRight className="size-4" />
                   </a>
                   <a
@@ -137,7 +114,7 @@ export function ProjectsSection() {
                     className="inline-flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground"
                   >
                     <Code2 className="size-4" />
-                    Code
+                    {t.projects.code}
                   </a>
                 </div>
               </div>

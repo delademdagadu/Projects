@@ -1,27 +1,35 @@
 'use client'
 
-const nav = [
-  { label: 'About', href: '#about' },
-  { label: 'Work', href: '#work' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Contact', href: '#contact' },
-]
+import { useLanguage } from '@/components/language-provider'
+import type { Language } from '@/lib/translations'
+
+const CV_HREF: Record<Language, string> = {
+  en: '/princess-dagadu-cv-en.pdf',
+  de: '/princess-dagadu-lebenslauf-de.pdf',
+}
 
 export function SiteHeader() {
+  const { lang, setLang, t } = useLanguage()
+
+  const nav = [
+    { label: t.header.nav.about, href: '#about' },
+    { label: t.header.nav.work, href: '#work' },
+    { label: t.header.nav.skills, href: '#skills' },
+    { label: t.header.nav.experience, href: '#experience' },
+    { label: t.header.nav.contact, href: '#contact' },
+  ]
+
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-4">
         <a href="#top" className="flex flex-col leading-tight">
           <span className="text-sm font-semibold tracking-tight text-foreground">
             Princess Dagadu
           </span>
-          <span className="text-xs text-muted-foreground">
-            Data &amp; Marketing Analyst
-          </span>
+          <span className="text-xs text-muted-foreground">{t.header.role}</span>
         </a>
 
-        <nav className="hidden items-center gap-1 sm:flex">
+        <nav className="hidden items-center gap-1 md:flex">
           {nav.map((item) => (
             <a
               key={item.href}
@@ -33,13 +41,37 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <a
-          href="/princess-dagadu-cv-en.pdf"
-          download
-          className="rounded-md bg-primary px-3.5 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
-        >
-          CV
-        </a>
+        <div className="flex items-center gap-3">
+          <div
+            role="group"
+            aria-label={t.header.langLabel}
+            className="flex items-center rounded-md border border-border p-0.5"
+          >
+            {(['en', 'de'] as Language[]).map((code) => (
+              <button
+                key={code}
+                type="button"
+                onClick={() => setLang(code)}
+                aria-pressed={lang === code}
+                className={`rounded-[5px] px-2 py-1 text-xs font-medium uppercase tracking-wide transition-colors ${
+                  lang === code
+                    ? 'bg-primary text-primary-foreground'
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                {code}
+              </button>
+            ))}
+          </div>
+
+          <a
+            href={CV_HREF[lang]}
+            download
+            className="rounded-md bg-primary px-3.5 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            {t.header.cv}
+          </a>
+        </div>
       </div>
     </header>
   )
