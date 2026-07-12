@@ -19,6 +19,8 @@ export type Dictionary = {
     nav: { about: string; work: string; skills: string; experience: string; contact: string }
     cv: string
     langLabel: string
+    themeToDark: string
+    themeToLight: string
   }
   hero: {
     eyebrow: string
@@ -83,8 +85,10 @@ export const translations: Record<Language, Dictionary> = {
         experience: 'Experience',
         contact: 'Contact',
       },
-      cv: 'CV',
-      langLabel: 'Language',
+    cv: 'CV',
+    langLabel: 'Language',
+    themeToDark: 'Switch to dark mode',
+    themeToLight: 'Switch to light mode',
     },
     hero: {
       eyebrow: 'Berlin, Germany · Open to opportunities',
@@ -267,8 +271,10 @@ export const translations: Record<Language, Dictionary> = {
         experience: 'Werdegang',
         contact: 'Kontakt',
       },
-      cv: 'Lebenslauf',
-      langLabel: 'Sprache',
+    cv: 'Lebenslauf',
+    langLabel: 'Sprache',
+    themeToDark: 'Zum Dunkelmodus wechseln',
+    themeToLight: 'Zum Hellmodus wechseln',
     },
     hero: {
       eyebrow: 'Berlin, Deutschland · Offen für neue Möglichkeiten',

@@ -1,6 +1,8 @@
 'use client'
 
+import { Moon, Sun } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
+import { useTheme } from '@/components/theme-provider'
 import type { Language } from '@/lib/translations'
 
 const CV_HREF: Record<Language, string> = {
@@ -10,6 +12,7 @@ const CV_HREF: Record<Language, string> = {
 
 export function SiteHeader() {
   const { lang, setLang, t } = useLanguage()
+  const { theme, toggleTheme } = useTheme()
 
   const nav = [
     { label: t.header.nav.about, href: '#about' },
@@ -71,6 +74,28 @@ export function SiteHeader() {
           >
             {t.header.cv}
           </a>
+
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={
+              theme === 'dark'
+                ? t.header.themeToLight
+                : t.header.themeToDark
+            }
+            title={
+              theme === 'dark'
+                ? t.header.themeToLight
+                : t.header.themeToDark
+            }
+            className="flex size-9 items-center justify-center rounded-md border border-border text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+          >
+            {theme === 'dark' ? (
+              <Sun className="size-4" />
+            ) : (
+              <Moon className="size-4" />
+            )}
+          </button>
         </div>
       </div>
     </header>
