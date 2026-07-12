@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 
@@ -18,19 +19,19 @@ export function HeroSection() {
         </p>
 
         <div className="mt-8 flex flex-wrap items-center gap-3">
-          <a
-            href="#work"
+          <Link
+            href="/work"
             className="inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
           >
             {t.hero.ctaPrimary}
             <ArrowUpRight className="size-4" />
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            href="/contact"
             className="inline-flex items-center gap-1.5 rounded-md border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
           >
             {t.hero.ctaSecondary}
-          </a>
+          </Link>
         </div>
 
         <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-border/60 pt-8 sm:max-w-md">

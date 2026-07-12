@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Moon, Sun } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 import { useTheme } from '@/components/theme-provider'
@@ -13,20 +15,21 @@ const CV_HREF: Record<Language, string> = {
 export function SiteHeader() {
   const { lang, setLang, t } = useLanguage()
   const { theme, toggleTheme } = useTheme()
+  const pathname = usePathname()
 
   const nav = [
-    { label: t.header.nav.about, href: '#about' },
-    { label: t.header.nav.work, href: '#work' },
-    { label: t.header.nav.dashboard, href: '#dashboard' },
-    { label: t.header.nav.skills, href: '#skills' },
-    { label: t.header.nav.experience, href: '#experience' },
-    { label: t.header.nav.contact, href: '#contact' },
+    { label: t.header.nav.about, href: '/about' },
+    { label: t.header.nav.work, href: '/work' },
+    { label: t.header.nav.dashboard, href: '/dashboard' },
+    { label: t.header.nav.skills, href: '/skills' },
+    { label: t.header.nav.experience, href: '/experience' },
+    { label: t.header.nav.contact, href: '/contact' },
   ]
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-4">
-        <a href="#top" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <img
             src="/images/deladem-logo.png"
             alt="Deladem Dagadu logo"
@@ -36,18 +39,26 @@ export function SiteHeader() {
           <span className="hidden text-xs text-muted-foreground sm:inline">
             {t.header.role}
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
-          {nav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-            >
-              {item.label}
-            </a>
-          ))}
+          {nav.map((item) => {
+            const active = pathname === item.href
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? 'page' : undefined}
+                className={`rounded-md px-3 py-1.5 text-sm transition-colors ${
+                  active
+                    ? 'bg-secondary font-medium text-foreground'
+                    : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
+                }`}
+              >
+                {item.label}
+              </Link>
+            )
+          })}
         </nav>
 
         <div className="flex items-center gap-3">
