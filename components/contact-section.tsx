@@ -72,13 +72,29 @@ export function ContactSection() {
             ))}
           </ul>
 
-          <a
-            href="/princess-dagadu-resume.pdf"
-            className="mt-8 inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
-          >
-            <Download className="size-4" />
-            Download resume (PDF)
-          </a>
+          <div className="mt-8">
+            <p className="mb-3 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+              Download CV
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="/princess-dagadu-cv-en.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+              >
+                <Download className="size-4" />
+                English (PDF)
+              </a>
+              <a
+                href="/princess-dagadu-lebenslauf-de.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+              >
+                <Download className="size-4" />
+                Deutsch (PDF)
+              </a>
+            </div>
+          </div>
         </div>
 
         <form

@@ -34,10 +34,11 @@ export function SiteHeader() {
         </nav>
 
         <a
-          href="/princess-dagadu-resume.pdf"
+          href="/princess-dagadu-cv-en.pdf"
+          download
           className="rounded-md bg-primary px-3.5 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
         >
-          Resume
+          CV
         </a>
       </div>
     </header>
