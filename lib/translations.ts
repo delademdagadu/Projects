@@ -52,6 +52,7 @@ export type Dictionary = {
   dashboard: {
     title: string
     subtitle: string
+    description: string[]
     caption: string
     openFull: string
   }
@@ -169,9 +170,13 @@ export const translations: Record<Language, Dictionary> = {
       ],
     },
     dashboard: {
-      title: 'Interactive dashboard',
+      title: 'Travel Booking Analytics Dashboard',
       subtitle:
-        'A live Tableau dashboard analyzing travel booking trends — filter and explore the data directly below.',
+        'Interactive BI dashboard on travel demand, revenue, and channel performance.',
+      description: [
+        'This interactive Tableau dashboard analyzes travel booking patterns, demand seasonality, revenue by destination, channel performance, and customer satisfaction, to show how raw booking data becomes a decision-ready reporting tool. It uses a dataset modeled on real travel-industry booking behavior.',
+        'The dashboard surfaces booking seasonality (clear demand waves ahead of summer and December travel), highlights which channels drive revenue versus which carry higher cancellation risk, and flags where satisfaction dips by destination and channel — the kind of view that turns a stack of spreadsheets into a five-minute stakeholder briefing.',
+      ],
       caption: 'Travel Booking Analytics · Built in Tableau',
       openFull: 'Open in Tableau Public',
     },
@@ -363,9 +368,13 @@ export const translations: Record<Language, Dictionary> = {
       ],
     },
     dashboard: {
-      title: 'Interaktives Dashboard',
+      title: 'Travel Booking Analytics Dashboard',
       subtitle:
-        'Ein Live-Tableau-Dashboard zur Analyse von Reisebuchungs-Trends — filtern und erkunden Sie die Daten direkt unten.',
+        'Interaktives BI-Dashboard zu Reisenachfrage, Umsatz und Kanal-Performance.',
+      description: [
+        'Dieses interaktive Tableau-Dashboard analysiert Reisebuchungsmuster, saisonale Nachfrage, Umsatz nach Reiseziel, Kanal-Performance und Kundenzufriedenheit und zeigt, wie aus Rohdaten von Buchungen ein entscheidungsreifes Reporting-Tool wird. Es verwendet einen Datensatz, der am realen Buchungsverhalten der Reisebranche modelliert ist.',
+        'Das Dashboard macht die saisonale Nachfrage sichtbar (deutliche Nachfragewellen vor den Sommer- und Dezemberreisen), zeigt, welche Kanäle den Umsatz treiben und welche ein höheres Stornorisiko tragen, und markiert, wo die Zufriedenheit je nach Reiseziel und Kanal sinkt — die Art von Überblick, die aus einem Stapel Tabellen ein fünfminütiges Stakeholder-Briefing macht.',
+      ],
       caption: 'Travel Booking Analytics · Erstellt in Tableau',
       openFull: 'In Tableau Public öffnen',
     },
