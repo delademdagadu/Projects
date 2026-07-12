@@ -16,7 +16,14 @@ type TimelineItem = {
 export type Dictionary = {
   header: {
     role: string
-    nav: { about: string; work: string; skills: string; experience: string; contact: string }
+    nav: {
+      about: string
+      work: string
+      dashboard: string
+      skills: string
+      experience: string
+      contact: string
+    }
     cv: string
     langLabel: string
     themeToDark: string
@@ -41,6 +48,12 @@ export type Dictionary = {
     viewNotebook: string
     code: string
     items: Project[]
+  }
+  dashboard: {
+    title: string
+    subtitle: string
+    caption: string
+    openFull: string
   }
   skills: {
     title: string
@@ -81,6 +94,7 @@ export const translations: Record<Language, Dictionary> = {
       nav: {
         about: 'About',
         work: 'Work',
+        dashboard: 'Dashboard',
         skills: 'Skills',
         experience: 'Experience',
         contact: 'Contact',
@@ -153,6 +167,13 @@ export const translations: Record<Language, Dictionary> = {
           metric: 'Insight-driven EDA for restoration & auction',
         },
       ],
+    },
+    dashboard: {
+      title: 'Interactive dashboard',
+      subtitle:
+        'A live Tableau dashboard analyzing travel booking trends — filter and explore the data directly below.',
+      caption: 'Travel Booking Analytics · Built in Tableau',
+      openFull: 'Open in Tableau Public',
     },
     skills: {
       title: 'Skills & tools',
@@ -267,6 +288,7 @@ export const translations: Record<Language, Dictionary> = {
       nav: {
         about: 'Über mich',
         work: 'Projekte',
+        dashboard: 'Dashboard',
         skills: 'Fähigkeiten',
         experience: 'Werdegang',
         contact: 'Kontakt',
@@ -339,6 +361,13 @@ export const translations: Record<Language, Dictionary> = {
           metric: 'Erkenntnisgetriebene EDA für Restaurierung & Auktion',
         },
       ],
+    },
+    dashboard: {
+      title: 'Interaktives Dashboard',
+      subtitle:
+        'Ein Live-Tableau-Dashboard zur Analyse von Reisebuchungs-Trends — filtern und erkunden Sie die Daten direkt unten.',
+      caption: 'Travel Booking Analytics · Erstellt in Tableau',
+      openFull: 'In Tableau Public öffnen',
     },
     skills: {
       title: 'Fähigkeiten & Tools',

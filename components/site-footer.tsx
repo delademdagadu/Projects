@@ -11,12 +11,13 @@ export function SiteFooter() {
         <p className="text-sm text-muted-foreground">
           © {new Date().getFullYear()} {t.footer.rights}
         </p>
-        <a
-          href="#top"
+        <button
+          type="button"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="text-sm text-muted-foreground transition-colors hover:text-foreground"
         >
           {t.footer.backToTop}
-        </a>
+        </button>
       </div>
     </footer>
   )
