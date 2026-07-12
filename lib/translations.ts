@@ -243,7 +243,7 @@ export const translations: Record<Language, Dictionary> = {
     },
     contact: {
       title: "Let's work together",
-      body: "I'm open to data analyst, data science, and marketing analytics roles, plus freelance projects. Based in Berlin — the fastest way to reach me is email.",
+      body: "I'm open to data analyst, data science, and marketing analytics roles, plus freelance projects.",
       emailLabel: 'Email',
       downloadCv: 'Download CV',
       cvEnglish: 'English (PDF)',
@@ -429,7 +429,7 @@ export const translations: Record<Language, Dictionary> = {
     },
     contact: {
       title: 'Lassen Sie uns zusammenarbeiten',
-      body: 'Ich bin offen für Positionen als Datenanalystin, Data Scientist und im Marketing-Analytics sowie für freiberufliche Projekte. In Berlin ansässig — am schnellsten erreichen Sie mich per E-Mail.',
+      body: 'Ich bin offen für Positionen als Datenanalystin, Data Scientist und im Marketing-Analytics sowie für freiberufliche Projekte.',
       emailLabel: 'E-Mail',
       downloadCv: 'Lebenslauf herunterladen',
       cvEnglish: 'Englisch (PDF)',
