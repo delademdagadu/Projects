@@ -17,17 +17,8 @@ export const metadata: Metadata = {
   title: 'Princess Deladem Dagadu — Data & Marketing Analyst',
   description:
     'Portfolio of Princess Deladem Dagadu, a data and marketing analyst specializing in analytics, BI dashboards, and applied machine learning. Selected projects, skills, and experience.',
-  generator: 'v0.app',
   icons: {
     icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
       {
         url: '/icon.svg',
         type: 'image/svg+xml',
