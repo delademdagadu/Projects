@@ -25,11 +25,16 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-4">
-        <a href="#top" className="flex flex-col leading-tight">
-          <span className="text-sm font-semibold tracking-tight text-foreground">
-            Princess Dagadu
+        <a href="#top" className="flex items-center gap-3">
+          <img
+            src="/images/deladem-logo.png"
+            alt="Deladem Dagadu logo"
+            className="h-11 w-auto rounded-lg"
+          />
+          <span className="sr-only">Princess Deladem Dagadu</span>
+          <span className="hidden text-xs text-muted-foreground sm:inline">
+            {t.header.role}
           </span>
-          <span className="text-xs text-muted-foreground">{t.header.role}</span>
         </a>
 
         <nav className="hidden items-center gap-1 md:flex">
