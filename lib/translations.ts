@@ -108,7 +108,7 @@ export const translations: Record<Language, Dictionary> = {
     hero: {
       eyebrow: 'Berlin, Germany · Open to opportunities',
       heading:
-        "I'm Princess, a data & marketing analyst turning data into decisions — across analytics, BI, and applied machine learning.",
+        "I'm Princess, a data & marketing analyst turning data into decisions - across analytics, BI, and applied machine learning.",
       body: 'I help teams move from raw numbers to clear answers: building BI dashboards stakeholders actually use, running rigorous A/B tests, and applying ML and NLP to lift ROI and guide strategy. Currently pursuing a double MSc in Data Science, AI & Digital Business and International Business.',
       ctaPrimary: 'View selected work',
       ctaSecondary: 'Get in touch',
@@ -121,13 +121,13 @@ export const translations: Record<Language, Dictionary> = {
     about: {
       title: 'About',
       paragraphs: [
-        "I'm a data and marketing analyst who started out in marketing and grew into analytics — which means I care as much about the business question as the model behind the answer. I work end to end: pulling and cleaning data with SQL and Python, exploring it for patterns, and translating the results into dashboards and recommendations that non-technical stakeholders can act on.",
-        "Based in Berlin, I'm currently completing a double MSc in Data Science, AI & Digital Business and International Business. My recent work spans customer segmentation, demand forecasting, sentiment analysis, and campaign performance — consistently focused on lifting ROI and making reporting faster and clearer.",
+        "I'm a data and marketing analyst who started out in marketing and grew into analytics - which means I care as much about the business question as the model behind the answer. I work end to end: pulling and cleaning data with SQL and Python, exploring it for patterns, and translating the results into dashboards and recommendations that non-technical stakeholders can act on.",
+        "Based in Berlin, I'm currently completing a double MSc in Data Science, AI & Digital Business and International Business. My recent work spans customer segmentation, demand forecasting, sentiment analysis, and campaign performance - consistently focused on lifting ROI and making reporting faster and clearer.",
       ],
       highlights: [
         'Blends marketing strategy with hands-on data science',
         'Turns analysis into decisions leaders can act on',
-        'Comfortable across the full lifecycle — SQL to dashboards to ML',
+        'Comfortable across the full lifecycle - SQL to dashboards to ML',
       ],
     },
     projects: {
@@ -158,7 +158,7 @@ export const translations: Record<Language, Dictionary> = {
         {
           title: 'End-to-End Machine Learning Pipeline',
           blurb:
-            'Assembled a complete ML workflow — data cleaning, feature engineering, model training, and evaluation — into a single reproducible pipeline.',
+            'Assembled a complete ML workflow - data cleaning, feature engineering, model training, and evaluation - into a single reproducible pipeline.',
           metric: 'Reproducible workflow from raw data to model',
         },
         {
@@ -175,7 +175,7 @@ export const translations: Record<Language, Dictionary> = {
         'Interactive BI dashboard on travel demand, revenue, and channel performance.',
       description: [
         'This interactive Tableau dashboard analyzes travel booking patterns, demand seasonality, revenue by destination, channel performance, and customer satisfaction, to show how raw booking data becomes a decision-ready reporting tool. It uses a dataset modeled on real travel-industry booking behavior.',
-        'The dashboard surfaces booking seasonality (clear demand waves ahead of summer and December travel), highlights which channels drive revenue versus which carry higher cancellation risk, and flags where satisfaction dips by destination and channel — the kind of view that turns a stack of spreadsheets into a five-minute stakeholder briefing.',
+        'The dashboard surfaces booking seasonality (clear demand waves ahead of summer and December travel), highlights which channels drive revenue versus which carry higher cancellation risk, and flags where satisfaction dips by destination and channel - the kind of view that turns a stack of spreadsheets into a five-minute stakeholder briefing.',
       ],
       caption: 'Travel Booking Analytics · Built in Tableau',
       openFull: 'Open in Tableau Public',
@@ -183,7 +183,7 @@ export const translations: Record<Language, Dictionary> = {
     skills: {
       title: 'Skills & tools',
       subtitle:
-        'The stack I reach for across the full lifecycle — from exploration to production.',
+        'The stack I reach for across the full lifecycle - from exploration to production.',
       groups: [
         {
           title: 'Data & Analytics',
@@ -216,28 +216,28 @@ export const translations: Record<Language, Dictionary> = {
       educationTitle: 'Education',
       experience: [
         {
-          period: 'Oct 2025 — Present',
+          period: 'Oct 2025 - Present',
           role: 'Freelance Data Analyst',
           org: "Today's Travel Agency",
           detail:
-            'Analyze data with SQL and Python to segment customers, build Tableau/Power BI dashboards, run A/B tests, and forecast demand — lifting ROI 20%+ and cutting reporting time 40%.',
+            'Analyze data with SQL and Python to segment customers, build Tableau/Power BI dashboards, run A/B tests, and forecast demand - lifting ROI 20%+ and cutting reporting time 40%.',
         },
         {
-          period: 'Mar 2024 — Oct 2024',
+          period: 'Mar 2024 - Oct 2024',
           role: 'Digital Marketing Intern',
           org: 'Insightful Metrics',
           detail:
             'Managed digital campaigns and analyzed performance (CTR, CPC, conversions) to optimize ROI, increasing engagement by 40%.',
         },
         {
-          period: 'Sep 2022 — Feb 2024',
+          period: 'Sep 2022 - Feb 2024',
           role: 'Vice President, Marketing',
           org: 'DEGIS Göttingen',
           detail:
-            'Led social media strategy and multi-channel campaigns, analyzing performance metrics to optimize communication — growing engagement 20%.',
+            'Led social media strategy and multi-channel campaigns, analyzing performance metrics to optimize communication - growing engagement 20%.',
         },
         {
-          period: 'Jun 2014 — Aug 2014',
+          period: 'Jun 2014 - Aug 2014',
           role: 'Marketing Intern',
           org: 'GIHOC Distilleries Ltd.',
           detail:
@@ -246,21 +246,21 @@ export const translations: Record<Language, Dictionary> = {
       ],
       education: [
         {
-          period: 'Jan 2025 — Present',
-          role: 'Double MSc — Data Science, AI & Digital Business + International Business',
+          period: 'Jan 2025 - Present',
+          role: 'Double MSc - Data Science, AI & Digital Business + International Business',
           org: 'GISMA University Berlin & Kingston University London',
           detail:
             'Focused on data science, AI, and digital business alongside international business strategy.',
         },
         {
-          period: 'Apr 2022 — Oct 2023',
+          period: 'Apr 2022 - Oct 2023',
           role: 'MSc General Management',
           org: 'PFH Private University, Göttingen',
           detail:
             'Grade: 1.89. STIBET Scholarship for Extraordinary Social Engagement (2022, 2023).',
         },
         {
-          period: 'Sep 2012 — May 2016',
+          period: 'Sep 2012 - May 2016',
           role: 'BSc Business Administration (Marketing)',
           org: 'University of Ghana, Legon',
           detail: 'Foundations in marketing, market research, and business analytics.',
@@ -306,7 +306,7 @@ export const translations: Record<Language, Dictionary> = {
     hero: {
       eyebrow: 'Berlin, Deutschland · Offen für neue Möglichkeiten',
       heading:
-        'Ich bin Princess, eine Daten- & Marketing-Analystin, die aus Daten Entscheidungen macht — über Analytics, BI und angewandtes Machine Learning hinweg.',
+        'Ich bin Princess, eine Daten- & Marketing-Analystin, die aus Daten Entscheidungen macht - über Analytics, BI und angewandtes Machine Learning hinweg.',
       body: 'Ich helfe Teams, von reinen Zahlen zu klaren Antworten zu kommen: BI-Dashboards, die Stakeholder wirklich nutzen, fundierte A/B-Tests und der Einsatz von ML und NLP, um den ROI zu steigern und die Strategie zu leiten. Aktuell absolviere ich einen doppelten MSc in Data Science, AI & Digital Business sowie International Business.',
       ctaPrimary: 'Ausgewählte Projekte',
       ctaSecondary: 'Kontakt aufnehmen',
@@ -319,13 +319,13 @@ export const translations: Record<Language, Dictionary> = {
     about: {
       title: 'Über mich',
       paragraphs: [
-        'Ich bin eine Daten- und Marketing-Analystin, die im Marketing begonnen und sich in die Analytik entwickelt hat — das heißt, mir ist die geschäftliche Fragestellung genauso wichtig wie das Modell hinter der Antwort. Ich arbeite End-to-End: Daten mit SQL und Python ziehen und bereinigen, sie auf Muster untersuchen und die Ergebnisse in Dashboards und Empfehlungen übersetzen, mit denen auch nicht-technische Stakeholder handeln können.',
-        'In Berlin ansässig, schließe ich derzeit einen doppelten MSc in Data Science, AI & Digital Business sowie International Business ab. Meine jüngsten Arbeiten umfassen Kundensegmentierung, Nachfrageprognosen, Sentiment-Analyse und Kampagnen-Performance — stets mit Fokus darauf, den ROI zu steigern und Reporting schneller und klarer zu machen.',
+        'Ich bin eine Daten- und Marketing-Analystin, die im Marketing begonnen und sich in die Analytik entwickelt hat - das heißt, mir ist die geschäftliche Fragestellung genauso wichtig wie das Modell hinter der Antwort. Ich arbeite End-to-End: Daten mit SQL und Python ziehen und bereinigen, sie auf Muster untersuchen und die Ergebnisse in Dashboards und Empfehlungen übersetzen, mit denen auch nicht-technische Stakeholder handeln können.',
+        'In Berlin ansässig, schließe ich derzeit einen doppelten MSc in Data Science, AI & Digital Business sowie International Business ab. Meine jüngsten Arbeiten umfassen Kundensegmentierung, Nachfrageprognosen, Sentiment-Analyse und Kampagnen-Performance - stets mit Fokus darauf, den ROI zu steigern und Reporting schneller und klarer zu machen.',
       ],
       highlights: [
         'Verbindet Marketingstrategie mit praktischer Data Science',
         'Macht aus Analysen Entscheidungen, mit denen Führungskräfte handeln können',
-        'Sicher über den gesamten Lebenszyklus — von SQL über Dashboards bis ML',
+        'Sicher über den gesamten Lebenszyklus - von SQL über Dashboards bis ML',
       ],
     },
     projects: {
@@ -338,7 +338,7 @@ export const translations: Record<Language, Dictionary> = {
         {
           title: 'Deep-Learning-Pipeline zur Lungenentzündungs-Erkennung',
           blurb:
-            'Eine End-to-End-Pipeline mit einem Convolutional Neural Network zur Klassifikation von Röntgenbildern des Brustkorbs — von der Bildvorverarbeitung und Augmentierung über das Modelltraining bis zur Auswertung.',
+            'Eine End-to-End-Pipeline mit einem Convolutional Neural Network zur Klassifikation von Röntgenbildern des Brustkorbs - von der Bildvorverarbeitung und Augmentierung über das Modelltraining bis zur Auswertung.',
           metric: 'Medizinische Bildklassifikation mit einem CNN',
         },
         {
@@ -356,7 +356,7 @@ export const translations: Record<Language, Dictionary> = {
         {
           title: 'End-to-End-Machine-Learning-Pipeline',
           blurb:
-            'Einen vollständigen ML-Workflow — Datenbereinigung, Feature Engineering, Modelltraining und Auswertung — in einer einzigen reproduzierbaren Pipeline zusammengeführt.',
+            'Einen vollständigen ML-Workflow - Datenbereinigung, Feature Engineering, Modelltraining und Auswertung - in einer einzigen reproduzierbaren Pipeline zusammengeführt.',
           metric: 'Reproduzierbarer Workflow von Rohdaten bis Modell',
         },
         {
@@ -373,7 +373,7 @@ export const translations: Record<Language, Dictionary> = {
         'Interaktives BI-Dashboard zu Reisenachfrage, Umsatz und Kanal-Performance.',
       description: [
         'Dieses interaktive Tableau-Dashboard analysiert Reisebuchungsmuster, saisonale Nachfrage, Umsatz nach Reiseziel, Kanal-Performance und Kundenzufriedenheit und zeigt, wie aus Rohdaten von Buchungen ein entscheidungsreifes Reporting-Tool wird. Es verwendet einen Datensatz, der am realen Buchungsverhalten der Reisebranche modelliert ist.',
-        'Das Dashboard macht die saisonale Nachfrage sichtbar (deutliche Nachfragewellen vor den Sommer- und Dezemberreisen), zeigt, welche Kanäle den Umsatz treiben und welche ein höheres Stornorisiko tragen, und markiert, wo die Zufriedenheit je nach Reiseziel und Kanal sinkt — die Art von Überblick, die aus einem Stapel Tabellen ein fünfminütiges Stakeholder-Briefing macht.',
+        'Das Dashboard macht die saisonale Nachfrage sichtbar (deutliche Nachfragewellen vor den Sommer- und Dezemberreisen), zeigt, welche Kanäle den Umsatz treiben und welche ein höheres Stornorisiko tragen, und markiert, wo die Zufriedenheit je nach Reiseziel und Kanal sinkt - die Art von Überblick, die aus einem Stapel Tabellen ein fünfminütiges Stakeholder-Briefing macht.',
       ],
       caption: 'Travel Booking Analytics · Erstellt in Tableau',
       openFull: 'In Tableau Public öffnen',
@@ -381,7 +381,7 @@ export const translations: Record<Language, Dictionary> = {
     skills: {
       title: 'Fähigkeiten & Tools',
       subtitle:
-        'Die Werkzeuge, zu denen ich über den gesamten Lebenszyklus greife — von der Exploration bis zur Produktion.',
+        'Die Werkzeuge, zu denen ich über den gesamten Lebenszyklus greife - von der Exploration bis zur Produktion.',
       groups: [
         {
           title: 'Daten & Analytics',
@@ -414,28 +414,28 @@ export const translations: Record<Language, Dictionary> = {
       educationTitle: 'Ausbildung',
       experience: [
         {
-          period: 'Okt. 2025 — heute',
+          period: 'Okt. 2025 - heute',
           role: 'Freiberufliche Datenanalystin',
           org: "Today's Travel Agency",
           detail:
-            'Analysiere Daten mit SQL und Python zur Kundensegmentierung, erstelle Tableau-/Power-BI-Dashboards, führe A/B-Tests durch und prognostiziere Nachfrage — mit einer ROI-Steigerung von über 20% und 40% weniger Reporting-Aufwand.',
+            'Analysiere Daten mit SQL und Python zur Kundensegmentierung, erstelle Tableau-/Power-BI-Dashboards, führe A/B-Tests durch und prognostiziere Nachfrage - mit einer ROI-Steigerung von über 20% und 40% weniger Reporting-Aufwand.',
         },
         {
-          period: 'März 2024 — Okt. 2024',
+          period: 'März 2024 - Okt. 2024',
           role: 'Praktikantin Digital Marketing',
           org: 'Insightful Metrics',
           detail:
             'Digitale Kampagnen betreut und die Performance (CTR, CPC, Conversions) analysiert, um den ROI zu optimieren und das Engagement um 40% zu steigern.',
         },
         {
-          period: 'Sep. 2022 — Feb. 2024',
+          period: 'Sep. 2022 - Feb. 2024',
           role: 'Vizepräsidentin, Marketing',
           org: 'DEGIS Göttingen',
           detail:
-            'Social-Media-Strategie und Multi-Channel-Kampagnen geleitet und Performance-Kennzahlen analysiert, um die Kommunikation zu optimieren — mit 20% mehr Engagement.',
+            'Social-Media-Strategie und Multi-Channel-Kampagnen geleitet und Performance-Kennzahlen analysiert, um die Kommunikation zu optimieren - mit 20% mehr Engagement.',
         },
         {
-          period: 'Juni 2014 — Aug. 2014',
+          period: 'Juni 2014 - Aug. 2014',
           role: 'Praktikantin Marketing',
           org: 'GIHOC Distilleries Ltd.',
           detail:
@@ -444,21 +444,21 @@ export const translations: Record<Language, Dictionary> = {
       ],
       education: [
         {
-          period: 'Jan. 2025 — heute',
-          role: 'Doppel-MSc — Data Science, AI & Digital Business + International Business',
+          period: 'Jan. 2025 - heute',
+          role: 'Doppel-MSc - Data Science, AI & Digital Business + International Business',
           org: 'GISMA University Berlin & Kingston University London',
           detail:
             'Schwerpunkt auf Data Science, KI und Digital Business sowie internationaler Unternehmensstrategie.',
         },
         {
-          period: 'Apr. 2022 — Okt. 2023',
+          period: 'Apr. 2022 - Okt. 2023',
           role: 'MSc General Management',
           org: 'PFH Private Hochschule, Göttingen',
           detail:
             'Note: 1,89. STIBET-Stipendium für außergewöhnliches soziales Engagement (2022, 2023).',
         },
         {
-          period: 'Sep. 2012 — Mai 2016',
+          period: 'Sep. 2012 - Mai 2016',
           role: 'BSc Betriebswirtschaftslehre (Marketing)',
           org: 'University of Ghana, Legon',
           detail: 'Grundlagen in Marketing, Marktforschung und Business Analytics.',
