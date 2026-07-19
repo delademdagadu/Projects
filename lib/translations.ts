@@ -154,52 +154,52 @@ export const translations: Record<Language, Dictionary> = {
       ],
       items: [
         {
-          title: 'Deep Learning Pipeline for Pneumonia Detection',
+          title: 'Pneumonia Detection from Chest X-Rays',
           blurb:
-            'Built an end-to-end convolutional neural network pipeline to classify chest X-rays, from image preprocessing and augmentation through model training and evaluation.',
+            'Built and benchmarked 10 CNN configurations (EfficientNetB0 vs. ResNet50, varying augmentation, learning rate, batch size) for pneumonia classification from chest X-rays. The best model (ResNet50, flip+zoom augmentation) reached 71% test accuracy, 92% recall and 71% precision on the Pneumonia class, and a 0.84 ROC-AUC; strong enough as a triage-prioritization aid, not a standalone diagnostic tool.',
           metric: 'Medical imaging classification with a CNN',
           caption: 'CNN classification',
         },
         {
-          title: 'Binary Sentiment Analysis using NLP Models',
+          title: 'What Are Customers Really Saying? Sentiment Classification at Scale',
           blurb:
-            'Cleaned and vectorized text data, then trained and compared NLP models to classify sentiment as positive or negative.',
+            'Benchmarked four approaches - N-gram+TF-IDF+Logistic Regression, fine-tuned DistilBERT, SBERT+Logistic Regression (two variants) - for binary sentiment classification. Fine-tuned DistilBERT won, with F1 ≈ 0.911, accuracy ≈ 0.909, precision ≈ 0.894, recall ≈ 0.929, beating the N-gram baseline (F1 ≈ 0.888) and SBERT+LR (F1 ≈ 0.809).',
           metric: 'Text classification across NLP model variants',
           caption: 'NLP model comparison',
         },
         {
-          title: 'End-to-End Machine Learning Pipeline',
+          title: 'Forecasting Daily Sales Revenue: An End-to-End ML Pipeline',
           blurb:
-            'Assembled a complete ML workflow - data cleaning, feature engineering, model training, and evaluation - into a single reproducible pipeline.',
-          metric: 'Reproducible workflow from raw data to model',
-          caption: 'Raw data to deployed model',
+            'Built a regression pipeline to forecast daily sales revenue using lag features (1/7/30-day) and moving averages. Compared multiple models; tuned Lasso Regression (alpha=100) was the best performer, evaluated via MAE and RMSE. Designed for retail inventory planning, reducing over/understocking by improving demand forecasts.',
+          metric: 'Regression forecasting from raw data to model',
+          caption: 'Regression forecasting pipeline',
         },
         {
-          title: 'Exploratory Data Analysis: Classic Cars',
+          title: 'Classic Car Performance & Efficiency Trends (1970s–80s)',
           blurb:
-            'Analyzed a classic-car dataset for restoration and auction insights, using visualization and correlation analysis to surface value drivers.',
+            'Analyzed a classic car dataset for a restoration and auction house client, answering five targeted business questions: most common cylinder count and its average MPG (4-cylinder, ~29.3 MPG), top manufacturers by horsepower (Chrysler and Cadillac lead - relevant for performance-buyer targeting), MPG distribution by country of origin, weight range by origin (Japan lightest and most consistent, USA widest range), and the year with the biggest MPG improvement.',
           metric: 'Insight-driven EDA for restoration & auction',
           caption: 'Exploratory data analysis',
         },
         {
-          title: 'Customer Behavior Analysis & Personalization',
+          title: 'Understanding Fashion E-Commerce Shopper Behavior',
           blurb:
-            'Explored customer behavior for a fashion e-commerce platform and built a personalization approach to surface relevant products.',
+            "Explored a fashion retailer's shopper data to identify what drives purchase amount and repeat behavior: demographics, product category, subscription status, promo usage. Found weak linear correlation between age/past purchases and spend, but signs that subscribers cluster among higher-frequency repeat buyers, and that promo codes weren't moving average order value.",
           metric: 'Personalization for a fashion e-commerce platform',
-          caption: 'Fashion e-commerce, +conversion',
+          caption: 'Fashion e-commerce',
         },
         {
-          title: 'Travel Bookings Dashboard',
+          title: 'Travel Booking Analytics Dashboard',
           blurb:
-            'An interactive Tableau BI dashboard on travel demand, revenue by destination, channel performance, and customer satisfaction.',
+            'Built an interactive Tableau dashboard analyzing travel bookings across 19 destinations, covering revenue by destination, monthly booking trends, satisfaction by destination and channel, lead time distribution, trip type breakdown, and channel performance (cancellation rate vs. revenue by booking channel). Consolidates reporting that would otherwise require pulling multiple static views into a single filterable, self-service dashboard.',
           metric: 'Interactive BI for travel booking decisions',
           caption: 'Interactive Tableau BI',
         },
         {
-          title: 'A/B Test Case Study',
+          title: 'Checkout Flow A/B Test: Does a One-Page Checkout Convert Better?',
           blurb:
-            'Designed and analyzed a checkout-flow A/B test end to end - power analysis, a two-proportion z-test, confidence intervals, and segment checks - to decide whether a one-page checkout beats a multi-step flow.',
-          metric: '25% conversion lift, significant at p < 0.001',
+            'Designed and analyzed an A/B test methodology comparing a one-page checkout against a multi-step flow, using simulated session data (~21,000 sessions) to demonstrate the full experimental process from pre-test power analysis to significance testing. Ran a two-proportion z-test with Wilson confidence intervals and validated the effect held consistently across device segments (mobile, desktop, tablet). Result: a 25.1% relative lift in conversion (p = 0.0008), with the confidence intervals for both groups non-overlapping.',
+          metric: '25.1% conversion lift, significant at p = 0.0008',
           caption: 'Full statistical analysis',
         },
       ],
@@ -384,52 +384,52 @@ export const translations: Record<Language, Dictionary> = {
       ],
       items: [
         {
-          title: 'Deep-Learning-Pipeline zur Lungenentzündungs-Erkennung',
+          title: 'Lungenentzündungs-Erkennung aus Röntgenbildern des Brustkorbs',
           blurb:
-            'Eine End-to-End-Pipeline mit einem Convolutional Neural Network zur Klassifikation von Röntgenbildern des Brustkorbs - von der Bildvorverarbeitung und Augmentierung über das Modelltraining bis zur Auswertung.',
+            '10 CNN-Konfigurationen (EfficientNetB0 vs. ResNet50, variierende Augmentierung, Lernrate, Batch-Größe) für die Lungenentzündungs-Klassifikation aus Röntgenbildern des Brustkorbs entwickelt und verglichen. Das beste Modell (ResNet50, Flip+Zoom-Augmentierung) erreichte 71 % Test-Genauigkeit, 92 % Recall und 71 % Precision auf der Pneumonie-Klasse sowie einen ROC-AUC von 0,84; stark genug als Triage-Priorisierungshilfe, nicht als eigenständiges Diagnosewerkzeug.',
           metric: 'Medizinische Bildklassifikation mit einem CNN',
           caption: 'CNN-Klassifikation',
         },
         {
-          title: 'Binäre Sentiment-Analyse mit NLP-Modellen',
+          title: 'Was sagen Kundinnen und Kunden wirklich? Sentiment-Klassifikation im großen Maßstab',
           blurb:
-            'Textdaten bereinigt und vektorisiert, dann NLP-Modelle trainiert und verglichen, um Sentiment als positiv oder negativ zu klassifizieren.',
+            'Vier Ansätze verglichen - N-Gram+TF-IDF+Logistische Regression, feinabgestimmtes DistilBERT, SBERT+Logistische Regression (zwei Varianten) - für die binäre Sentiment-Klassifikation. Feinabgestimmtes DistilBERT gewann mit F1 ≈ 0,911, Genauigkeit ≈ 0,909, Precision ≈ 0,894, Recall ≈ 0,929 und schlug damit die N-Gram-Baseline (F1 ≈ 0,888) und SBERT+LR (F1 ≈ 0,809).',
           metric: 'Textklassifikation über mehrere NLP-Modellvarianten',
           caption: 'NLP-Modellvergleich',
         },
         {
-          title: 'End-to-End-Machine-Learning-Pipeline',
+          title: 'Prognose des täglichen Umsatzes: eine End-to-End-ML-Pipeline',
           blurb:
-            'Einen vollständigen ML-Workflow - Datenbereinigung, Feature Engineering, Modelltraining und Auswertung - in einer einzigen reproduzierbaren Pipeline zusammengeführt.',
-          metric: 'Reproduzierbarer Workflow von Rohdaten bis Modell',
-          caption: 'Von Rohdaten zum Modell',
+            'Eine Regressions-Pipeline zur Prognose des täglichen Umsatzes mit Lag-Features (1/7/30 Tage) und gleitenden Durchschnitten gebaut. Mehrere Modelle verglichen; die getunte Lasso-Regression (alpha=100) war das beste Modell, ausgewertet über MAE und RMSE. Konzipiert für die Bestandsplanung im Handel, um Über- und Unterbestände durch bessere Nachfrageprognosen zu reduzieren.',
+          metric: 'Regressions-Prognose von Rohdaten bis Modell',
+          caption: 'Regressions-Prognose-Pipeline',
         },
         {
-          title: 'Explorative Datenanalyse: Oldtimer',
+          title: 'Leistungs- & Effizienztrends bei Oldtimern (1970er–80er)',
           blurb:
-            'Einen Oldtimer-Datensatz für Restaurierungs- und Auktionseinblicke analysiert und mit Visualisierung und Korrelationsanalyse die Werttreiber herausgearbeitet.',
+            'Einen Oldtimer-Datensatz für einen Restaurierungs- und Auktionshaus-Kunden analysiert und fünf gezielte Geschäftsfragen beantwortet: häufigste Zylinderzahl und deren durchschnittlicher Verbrauch (4 Zylinder, ~29,3 MPG), Top-Hersteller nach PS (Chrysler und Cadillac führen - relevant für die Ansprache leistungsorientierter Käufer), MPG-Verteilung nach Herkunftsland, Gewichtsspanne nach Herkunft (Japan am leichtesten und konstantesten, USA größte Spanne) und das Jahr mit der größten MPG-Verbesserung.',
           metric: 'Erkenntnisgetriebene EDA für Restaurierung & Auktion',
           caption: 'Explorative Datenanalyse',
         },
         {
-          title: 'Kundenverhaltensanalyse & Personalisierung',
+          title: 'Das Einkaufsverhalten im Fashion-E-Commerce verstehen',
           blurb:
-            'Kundenverhalten für eine Fashion-E-Commerce-Plattform untersucht und einen Personalisierungsansatz entwickelt, um relevante Produkte hervorzuheben.',
+            'Die Shopper-Daten eines Modehändlers untersucht, um zu ermitteln, was Kaufbetrag und Wiederkaufverhalten treibt: Demografie, Produktkategorie, Abo-Status, Gutschein-Nutzung. Schwache lineare Korrelation zwischen Alter/früheren Käufen und Ausgaben gefunden, aber Hinweise darauf, dass Abonnenten sich unter den häufigeren Wiederkäufern gruppieren und dass Gutscheincodes den durchschnittlichen Bestellwert nicht bewegten.',
           metric: 'Personalisierung für eine Fashion-E-Commerce-Plattform',
-          caption: 'Fashion-E-Commerce, +Conversion',
+          caption: 'Fashion-E-Commerce',
         },
         {
-          title: 'Travel Bookings Dashboard',
+          title: 'Travel Booking Analytics Dashboard',
           blurb:
-            'Ein interaktives Tableau-BI-Dashboard zu Reisenachfrage, Umsatz nach Reiseziel, Kanal-Performance und Kundenzufriedenheit.',
+            'Ein interaktives Tableau-Dashboard gebaut, das Reisebuchungen über 19 Reiseziele analysiert: Umsatz nach Reiseziel, monatliche Buchungstrends, Zufriedenheit nach Reiseziel und Kanal, Vorlaufzeit-Verteilung, Reisetyp-Aufschlüsselung und Kanal-Performance (Stornoquote vs. Umsatz nach Buchungskanal). Bündelt Reporting, das sonst mehrere statische Ansichten erfordern würde, in einem einzigen filterbaren Self-Service-Dashboard.',
           metric: 'Interaktives BI für Reisebuchungs-Entscheidungen',
           caption: 'Interaktives Tableau-BI',
         },
         {
-          title: 'A/B-Test-Fallstudie',
+          title: 'Checkout-Flow-A/B-Test: Konvertiert ein einseitiger Checkout besser?',
           blurb:
-            'Einen A/B-Test zum Checkout-Flow von Anfang bis Ende konzipiert und ausgewertet - Power-Analyse, Zwei-Stichproben-z-Test, Konfidenzintervalle und Segment-Checks - um zu entscheiden, ob ein einseitiger Checkout einen mehrstufigen schlägt.',
-          metric: '25 % Conversion-Steigerung, signifikant bei p < 0,001',
+            'Eine A/B-Test-Methodik konzipiert und ausgewertet, die einen einseitigen Checkout mit einem mehrstufigen Flow vergleicht, mit simulierten Sitzungsdaten (~21.000 Sitzungen), um den vollständigen experimentellen Prozess von der Power-Analyse vorab bis zur Signifikanzprüfung zu demonstrieren. Einen Zwei-Stichproben-z-Test mit Wilson-Konfidenzintervallen durchgeführt und validiert, dass der Effekt über Geräte-Segmente (Mobil, Desktop, Tablet) konsistent blieb. Ergebnis: 25,1 % relative Conversion-Steigerung (p = 0,0008), wobei die Konfidenzintervalle beider Gruppen nicht überlappen.',
+          metric: '25,1 % Conversion-Steigerung, signifikant bei p = 0,0008',
           caption: 'Vollständige statistische Analyse',
         },
       ],

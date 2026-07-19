@@ -91,10 +91,7 @@ export function ProjectsSection() {
             return (
               <div key={track.title}>
                 <div className="mb-6">
-                  <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                    {t.projects.trackLabel} {trackNumber}
-                  </p>
-                  <h3 className="mt-1 text-xl font-semibold tracking-tight text-foreground">
+                  <h3 className="text-xl font-semibold tracking-tight text-foreground">
                     {track.title}
                   </h3>
                   <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
@@ -102,7 +99,7 @@ export function ProjectsSection() {
                   </p>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-4 sm:grid-cols-2">
                   {trackItems.map((project) => {
                     const Icon = project.icon
                     const isInternal = Boolean(project.internalHref)
@@ -110,7 +107,7 @@ export function ProjectsSection() {
                       'group flex flex-col rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/40 hover:bg-secondary/40'
                     const content = (
                       <>
-                        <div className="mb-8 flex items-start justify-between">
+                        <div className="mb-5 flex items-start justify-between">
                           <Icon
                             className="size-6 text-primary"
                             aria-hidden="true"
@@ -120,8 +117,11 @@ export function ProjectsSection() {
                         <h4 className="text-pretty font-medium leading-snug text-foreground">
                           {project.title}
                         </h4>
-                        <p className="mt-1 text-sm text-muted-foreground">
+                        <p className="mt-1 text-xs font-medium uppercase tracking-wide text-primary/80">
                           {project.caption}
+                        </p>
+                        <p className="mt-3 text-pretty text-sm leading-relaxed text-muted-foreground">
+                          {project.blurb}
                         </p>
                       </>
                     )
