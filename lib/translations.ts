@@ -4,6 +4,7 @@ type Project = {
   title: string
   blurb: string
   metric: string
+  caption: string
 }
 
 type TimelineItem = {
@@ -47,6 +48,8 @@ export type Dictionary = {
     subtitle: string
     viewNotebook: string
     code: string
+    trackLabel: string
+    tracks: { title: string; description: string }[]
     items: Project[]
   }
   dashboard: {
@@ -136,36 +139,68 @@ export const translations: Record<Language, Dictionary> = {
         'A few projects that show how I move from a question to a shipped, measurable result.',
       viewNotebook: 'View notebook',
       code: 'Code',
+      trackLabel: 'Track',
+      tracks: [
+        {
+          title: 'Data science & ML',
+          description:
+            'General technical depth - modeling, engineering, evaluation.',
+        },
+        {
+          title: 'Marketing & business analytics',
+          description:
+            'Applied work tied to business outcomes - conversion, ROI, decisions.',
+        },
+      ],
       items: [
         {
           title: 'Deep Learning Pipeline for Pneumonia Detection',
           blurb:
             'Built an end-to-end convolutional neural network pipeline to classify chest X-rays, from image preprocessing and augmentation through model training and evaluation.',
           metric: 'Medical imaging classification with a CNN',
+          caption: 'CNN classification',
         },
         {
           title: 'Binary Sentiment Analysis using NLP Models',
           blurb:
             'Cleaned and vectorized text data, then trained and compared NLP models to classify sentiment as positive or negative.',
           metric: 'Text classification across NLP model variants',
-        },
-        {
-          title: 'Customer Behavior Analysis & Personalization',
-          blurb:
-            'Explored customer behavior for a fashion e-commerce platform and built a personalization approach to surface relevant products.',
-          metric: 'Personalization for a fashion e-commerce platform',
+          caption: 'NLP model comparison',
         },
         {
           title: 'End-to-End Machine Learning Pipeline',
           blurb:
             'Assembled a complete ML workflow - data cleaning, feature engineering, model training, and evaluation - into a single reproducible pipeline.',
           metric: 'Reproducible workflow from raw data to model',
+          caption: 'Raw data to deployed model',
         },
         {
           title: 'Exploratory Data Analysis: Classic Cars',
           blurb:
             'Analyzed a classic-car dataset for restoration and auction insights, using visualization and correlation analysis to surface value drivers.',
           metric: 'Insight-driven EDA for restoration & auction',
+          caption: 'Exploratory data analysis',
+        },
+        {
+          title: 'Customer Behavior Analysis & Personalization',
+          blurb:
+            'Explored customer behavior for a fashion e-commerce platform and built a personalization approach to surface relevant products.',
+          metric: 'Personalization for a fashion e-commerce platform',
+          caption: 'Fashion e-commerce, +conversion',
+        },
+        {
+          title: 'Travel Bookings Dashboard',
+          blurb:
+            'An interactive Tableau BI dashboard on travel demand, revenue by destination, channel performance, and customer satisfaction.',
+          metric: 'Interactive BI for travel booking decisions',
+          caption: 'Interactive Tableau BI',
+        },
+        {
+          title: 'A/B Test Case Study',
+          blurb:
+            'Designed and analyzed a checkout-flow A/B test end to end - power analysis, a two-proportion z-test, confidence intervals, and segment checks - to decide whether a one-page checkout beats a multi-step flow.',
+          metric: '25% conversion lift, significant at p < 0.001',
+          caption: 'Full statistical analysis',
         },
       ],
     },
@@ -334,36 +369,68 @@ export const translations: Record<Language, Dictionary> = {
         'Einige Projekte, die zeigen, wie ich von einer Fragestellung zu einem umgesetzten, messbaren Ergebnis komme.',
       viewNotebook: 'Notebook ansehen',
       code: 'Code',
+      trackLabel: 'Track',
+      tracks: [
+        {
+          title: 'Data Science & ML',
+          description:
+            'Allgemeine technische Tiefe - Modellierung, Engineering, Evaluation.',
+        },
+        {
+          title: 'Marketing- & Business-Analytics',
+          description:
+            'Angewandte Arbeit mit Bezug zu Geschäftsergebnissen - Conversion, ROI, Entscheidungen.',
+        },
+      ],
       items: [
         {
           title: 'Deep-Learning-Pipeline zur Lungenentzündungs-Erkennung',
           blurb:
             'Eine End-to-End-Pipeline mit einem Convolutional Neural Network zur Klassifikation von Röntgenbildern des Brustkorbs - von der Bildvorverarbeitung und Augmentierung über das Modelltraining bis zur Auswertung.',
           metric: 'Medizinische Bildklassifikation mit einem CNN',
+          caption: 'CNN-Klassifikation',
         },
         {
           title: 'Binäre Sentiment-Analyse mit NLP-Modellen',
           blurb:
             'Textdaten bereinigt und vektorisiert, dann NLP-Modelle trainiert und verglichen, um Sentiment als positiv oder negativ zu klassifizieren.',
           metric: 'Textklassifikation über mehrere NLP-Modellvarianten',
-        },
-        {
-          title: 'Kundenverhaltensanalyse & Personalisierung',
-          blurb:
-            'Kundenverhalten für eine Fashion-E-Commerce-Plattform untersucht und einen Personalisierungsansatz entwickelt, um relevante Produkte hervorzuheben.',
-          metric: 'Personalisierung für eine Fashion-E-Commerce-Plattform',
+          caption: 'NLP-Modellvergleich',
         },
         {
           title: 'End-to-End-Machine-Learning-Pipeline',
           blurb:
             'Einen vollständigen ML-Workflow - Datenbereinigung, Feature Engineering, Modelltraining und Auswertung - in einer einzigen reproduzierbaren Pipeline zusammengeführt.',
           metric: 'Reproduzierbarer Workflow von Rohdaten bis Modell',
+          caption: 'Von Rohdaten zum Modell',
         },
         {
           title: 'Explorative Datenanalyse: Oldtimer',
           blurb:
             'Einen Oldtimer-Datensatz für Restaurierungs- und Auktionseinblicke analysiert und mit Visualisierung und Korrelationsanalyse die Werttreiber herausgearbeitet.',
           metric: 'Erkenntnisgetriebene EDA für Restaurierung & Auktion',
+          caption: 'Explorative Datenanalyse',
+        },
+        {
+          title: 'Kundenverhaltensanalyse & Personalisierung',
+          blurb:
+            'Kundenverhalten für eine Fashion-E-Commerce-Plattform untersucht und einen Personalisierungsansatz entwickelt, um relevante Produkte hervorzuheben.',
+          metric: 'Personalisierung für eine Fashion-E-Commerce-Plattform',
+          caption: 'Fashion-E-Commerce, +Conversion',
+        },
+        {
+          title: 'Travel Bookings Dashboard',
+          blurb:
+            'Ein interaktives Tableau-BI-Dashboard zu Reisenachfrage, Umsatz nach Reiseziel, Kanal-Performance und Kundenzufriedenheit.',
+          metric: 'Interaktives BI für Reisebuchungs-Entscheidungen',
+          caption: 'Interaktives Tableau-BI',
+        },
+        {
+          title: 'A/B-Test-Fallstudie',
+          blurb:
+            'Einen A/B-Test zum Checkout-Flow von Anfang bis Ende konzipiert und ausgewertet - Power-Analyse, Zwei-Stichproben-z-Test, Konfidenzintervalle und Segment-Checks - um zu entscheiden, ob ein einseitiger Checkout einen mehrstufigen schlägt.',
+          metric: '25 % Conversion-Steigerung, signifikant bei p < 0,001',
+          caption: 'Vollständige statistische Analyse',
         },
       ],
     },
