@@ -47,8 +47,8 @@ export type Dictionary = {
     title: string
     subtitle: string
     viewNotebook: string
+    viewDashboard: string
     code: string
-    trackLabel: string
     tracks: { title: string; description: string }[]
     items: Project[]
   }
@@ -138,68 +138,68 @@ export const translations: Record<Language, Dictionary> = {
       subtitle:
         'A few projects that show how I move from a question to a shipped, measurable result.',
       viewNotebook: 'View notebook',
+      viewDashboard: 'View dashboard',
       code: 'Code',
-      trackLabel: 'Track',
       tracks: [
         {
-          title: 'Data science & ML',
+          title: 'Data Science & Machine Learning',
           description:
-            'General technical depth - modeling, engineering, evaluation.',
+            'General technical depth: modeling, engineering, evaluation.',
         },
         {
-          title: 'Marketing & business analytics',
+          title: 'Marketing & Business Analytics',
           description:
-            'Applied work tied to business outcomes - conversion, ROI, decisions.',
+            'Applied work tied to business outcomes: conversion, ROI, decisions.',
         },
       ],
       items: [
         {
           title: 'Pneumonia Detection from Chest X-Rays',
           blurb:
-            'Built and benchmarked 10 CNN configurations (EfficientNetB0 vs. ResNet50, varying augmentation, learning rate, batch size) for pneumonia classification from chest X-rays. The best model (ResNet50, flip+zoom augmentation) reached 71% test accuracy, 92% recall and 71% precision on the Pneumonia class, and a 0.84 ROC-AUC; strong enough as a triage-prioritization aid, not a standalone diagnostic tool.',
-          metric: 'Medical imaging classification with a CNN',
+            'Benchmarked 10 CNN configurations (EfficientNetB0 vs. ResNet50) for pneumonia classification from chest X-rays. The best model hit 71% accuracy, 92% recall, and a 0.84 ROC-AUC, built as a triage-prioritization aid rather than a standalone diagnostic.',
+          metric: 'ResNet50 · 92% recall · 0.84 ROC-AUC',
           caption: 'CNN classification',
         },
         {
           title: 'What Are Customers Really Saying? Sentiment Classification at Scale',
           blurb:
-            'Benchmarked four approaches - N-gram+TF-IDF+Logistic Regression, fine-tuned DistilBERT, SBERT+Logistic Regression (two variants) - for binary sentiment classification. Fine-tuned DistilBERT won, with F1 ≈ 0.911, accuracy ≈ 0.909, precision ≈ 0.894, recall ≈ 0.929, beating the N-gram baseline (F1 ≈ 0.888) and SBERT+LR (F1 ≈ 0.809).',
-          metric: 'Text classification across NLP model variants',
+            'Compared four approaches (N-gram+TF-IDF, fine-tuned DistilBERT, two SBERT variants) for binary sentiment classification. Fine-tuned DistilBERT won with F1 ≈ 0.91, beating the N-gram baseline and SBERT+LR.',
+          metric: 'DistilBERT · F1 ≈ 0.91',
           caption: 'NLP model comparison',
         },
         {
           title: 'Forecasting Daily Sales Revenue: An End-to-End ML Pipeline',
           blurb:
-            'Built a regression pipeline to forecast daily sales revenue using lag features (1/7/30-day) and moving averages. Compared multiple models; tuned Lasso Regression (alpha=100) was the best performer, evaluated via MAE and RMSE. Designed for retail inventory planning, reducing over/understocking by improving demand forecasts.',
-          metric: 'Regression forecasting from raw data to model',
+            'Built a regression pipeline to forecast daily sales revenue using lag features and moving averages. Tuned Lasso Regression (alpha=100) was the best model, evaluated on MAE and RMSE, designed for retail inventory planning.',
+          metric: 'Lasso regression · retail demand forecasting',
           caption: 'Regression forecasting pipeline',
-        },
-        {
-          title: 'Classic Car Performance & Efficiency Trends (1970s–80s)',
-          blurb:
-            'Analyzed a classic car dataset for a restoration and auction house client, answering five targeted business questions: most common cylinder count and its average MPG (4-cylinder, ~29.3 MPG), top manufacturers by horsepower (Chrysler and Cadillac lead - relevant for performance-buyer targeting), MPG distribution by country of origin, weight range by origin (Japan lightest and most consistent, USA widest range), and the year with the biggest MPG improvement.',
-          metric: 'Insight-driven EDA for restoration & auction',
-          caption: 'Exploratory data analysis',
         },
         {
           title: 'Understanding Fashion E-Commerce Shopper Behavior',
           blurb:
-            "Explored a fashion retailer's shopper data to identify what drives purchase amount and repeat behavior: demographics, product category, subscription status, promo usage. Found weak linear correlation between age/past purchases and spend, but signs that subscribers cluster among higher-frequency repeat buyers, and that promo codes weren't moving average order value.",
+            "Explored a fashion retailer's shopper data to find what drives spend and repeat buying across demographics, product category, subscription status, and promo usage. Subscribers clustered among higher-frequency repeat buyers, while promo codes weren't moving order value.",
           metric: 'Personalization for a fashion e-commerce platform',
           caption: 'Fashion e-commerce',
         },
         {
+          title: 'Classic Car Performance & Efficiency Trends (1970s-80s)',
+          blurb:
+            'Analyzed a classic car dataset for a restoration and auction client, answering five business questions on fuel efficiency, horsepower leaders (Chrysler and Cadillac), and weight and MPG patterns by country of origin.',
+          metric: 'Insight-driven EDA for restoration & auction',
+          caption: 'Exploratory data analysis',
+        },
+        {
           title: 'Travel Booking Analytics Dashboard',
           blurb:
-            'Built an interactive Tableau dashboard analyzing travel bookings across 19 destinations, covering revenue by destination, monthly booking trends, satisfaction by destination and channel, lead time distribution, trip type breakdown, and channel performance (cancellation rate vs. revenue by booking channel). Consolidates reporting that would otherwise require pulling multiple static views into a single filterable, self-service dashboard.',
+            'Interactive Tableau dashboard analyzing bookings across 19 destinations: revenue by destination, seasonality, satisfaction by channel, lead time, trip type, and channel performance, all in one filterable self-service view.',
           metric: 'Interactive BI for travel booking decisions',
           caption: 'Interactive Tableau BI',
         },
         {
           title: 'Checkout Flow A/B Test: Does a One-Page Checkout Convert Better?',
           blurb:
-            'Designed and analyzed an A/B test methodology comparing a one-page checkout against a multi-step flow, using simulated session data (~21,000 sessions) to demonstrate the full experimental process from pre-test power analysis to significance testing. Ran a two-proportion z-test with Wilson confidence intervals and validated the effect held consistently across device segments (mobile, desktop, tablet). Result: a 25.1% relative lift in conversion (p = 0.0008), with the confidence intervals for both groups non-overlapping.',
-          metric: '25.1% conversion lift, significant at p = 0.0008',
+            'Designed and analyzed a checkout A/B test on ~21,000 simulated sessions, from pre-test power analysis to a two-proportion z-test with Wilson confidence intervals. A one-page checkout lifted conversion 25.1% (p = 0.0008), consistent across device segments.',
+          metric: '25.1% conversion lift · p = 0.0008',
           caption: 'Full statistical analysis',
         },
       ],
