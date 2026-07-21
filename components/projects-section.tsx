@@ -4,14 +4,18 @@ import Link from 'next/link'
 import { ArrowUpRight, Code2 } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 
-const REPO = 'https://github.com/delademdagadu/Projects/blob/main'
-const NBVIEWER = 'https://nbviewer.org/github/delademdagadu/Projects/blob/main'
+const REPO = 'https://github.com/delademdagadu/DataProjects/blob/main'
+const NBVIEWER =
+  'https://nbviewer.org/github/delademdagadu/DataProjects/blob/main'
 
 type ProjectMeta = {
   track: 1 | 2
   image: string
   tags: string[]
   file?: string
+  // When true the file is a plain script (not a notebook), so link to GitHub
+  // directly instead of nbviewer.
+  isScript?: boolean
   internalHref?: string
 }
 
@@ -21,31 +25,31 @@ const projectMeta: ProjectMeta[] = [
     track: 1,
     image: '/images/project-pneumonia.png',
     tags: ['Python', 'TensorFlow/Keras', 'CNN', 'Computer Vision'],
-    file: 'Deep%20Learning%20Pipeline%20for%20Pneumonia%20Detection.ipynb',
+    file: 'Deep%20Learning%20Pipeline%20for%20Pneumonia%20Detection%20(1).ipynb',
   },
   {
     track: 1,
     image: '/images/project-nlp.png',
     tags: ['Python', 'NLP', 'DistilBERT', 'scikit-learn'],
-    file: 'Binary%20Sentiment%20Analysis%20using%20NLP%20Models%20.ipynb',
+    file: 'Binary_Sentiment_Analysis_using_NLP_Models_.ipynb',
   },
   {
     track: 1,
     image: '/images/project-forecast.png',
     tags: ['Python', 'scikit-learn', 'Feature Engineering', 'Pipelines'],
-    file: 'End_to_end_Machine_Learning_Pipeline.ipynb',
+    file: 'End-to-end%20Machine%20Learning%20Pipeline.ipynb',
   },
   {
     track: 2,
     image: '/images/project-churn.png',
     tags: ['Python', 'Pandas', 'Segmentation', 'EDA'],
-    file: 'Customer%20Behavior%20Analysis%20and%20Personalization%20for%20a%20Fashion%20E-Commerce%20Platform.ipynb',
+    file: 'Customer_Behavior_Analysis_%26_Personalization.ipynb',
   },
   {
     track: 2,
     image: '/images/project-eda.png',
     tags: ['Python', 'Pandas', 'Matplotlib', 'EDA'],
-    file: 'Exploratory_Data_Analysis_of_Classic_Cars_for_Restoration_and_Auction.ipynb',
+    file: 'Exploratory_Data_Analysis_of_Classic_Cars_for_Restoration_and_Auction%20(1).ipynb',
   },
   {
     track: 2,
@@ -57,7 +61,8 @@ const projectMeta: ProjectMeta[] = [
     track: 2,
     image: '/images/project-ab.png',
     tags: ['Python', 'A/B Testing', 'SciPy', 'Statistics'],
-    file: 'Checkout_A_B_Test_Analysis.ipynb',
+    file: 'checkout_a_b_test_analysis.py',
+    isScript: true,
   },
 ]
 
@@ -66,8 +71,16 @@ export function ProjectsSection() {
 
   const items = t.projects.items.map((item, i) => {
     const meta = projectMeta[i]
-    const demoHref = meta.internalHref ?? `${NBVIEWER}/${meta.file}`
-    const codeHref = meta.file ? `${REPO}/${meta.file}` : undefined
+    const githubHref = meta.file ? `${REPO}/${meta.file}` : undefined
+    // Scripts and internal pages skip nbviewer; notebooks render via nbviewer.
+    const demoHref = meta.internalHref
+      ? meta.internalHref
+      : meta.isScript
+        ? githubHref
+        : `${NBVIEWER}/${meta.file}`
+    // Hide the redundant "Code" link when the primary link already points to
+    // the source file on GitHub (scripts).
+    const codeHref = meta.isScript ? undefined : githubHref
     return { ...item, ...meta, demoHref, codeHref }
   })
 
