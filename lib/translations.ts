@@ -36,7 +36,6 @@ export type Dictionary = {
     body: string
     ctaPrimary: string
     ctaSecondary: string
-    stats: { value: string; label: string }[]
   }
   about: {
     title: string
@@ -109,17 +108,12 @@ export const translations: Record<Language, Dictionary> = {
     themeToLight: 'Switch to light mode',
     },
     hero: {
-      eyebrow: 'Berlin, Germany · Open to opportunities',
+      eyebrow: 'Open to opportunities',
       heading:
         "I'm Princess, a data & marketing analyst turning data into decisions - across analytics, BI, and applied machine learning.",
       body: 'I help teams move from raw numbers to clear answers: building BI dashboards stakeholders actually use, running rigorous A/B tests, and applying ML and NLP to lift ROI and guide strategy. Currently pursuing a double MSc in Data Science, AI & Digital Business and International Business.',
       ctaPrimary: 'View selected work',
       ctaSecondary: 'Get in touch',
-      stats: [
-        { value: '20%+', label: 'Campaign ROI lift' },
-        { value: '40%', label: 'Faster reporting' },
-        { value: '15–25%', label: 'Conversion uplift' },
-      ],
     },
     about: {
       title: 'About',
@@ -318,7 +312,7 @@ export const translations: Record<Language, Dictionary> = {
       formSubmit: 'Send message',
     },
     footer: {
-      rights: 'Princess Deladem Dagadu. Berlin, Germany.',
+      rights: 'Princess Deladem Dagadu.',
       backToTop: 'Back to top ↑',
     },
   },
@@ -339,17 +333,12 @@ export const translations: Record<Language, Dictionary> = {
     themeToLight: 'Zum Hellmodus wechseln',
     },
     hero: {
-      eyebrow: 'Berlin, Deutschland · Offen für neue Möglichkeiten',
+      eyebrow: 'Offen für neue Möglichkeiten',
       heading:
         'Ich bin Princess, eine Daten- & Marketing-Analystin, die aus Daten Entscheidungen macht - über Analytics, BI und angewandtes Machine Learning hinweg.',
       body: 'Ich helfe Teams, von reinen Zahlen zu klaren Antworten zu kommen: BI-Dashboards, die Stakeholder wirklich nutzen, fundierte A/B-Tests und der Einsatz von ML und NLP, um den ROI zu steigern und die Strategie zu leiten. Aktuell absolviere ich einen doppelten MSc in Data Science, AI & Digital Business sowie International Business.',
       ctaPrimary: 'Ausgewählte Projekte',
       ctaSecondary: 'Kontakt aufnehmen',
-      stats: [
-        { value: '20%+', label: 'Höherer Kampagnen-ROI' },
-        { value: '40%', label: 'Schnelleres Reporting' },
-        { value: '15–25%', label: 'Höhere Conversion' },
-      ],
     },
     about: {
       title: 'Über mich',
@@ -548,7 +537,7 @@ export const translations: Record<Language, Dictionary> = {
       formSubmit: 'Nachricht senden',
     },
     footer: {
-      rights: 'Princess Deladem Dagadu. Berlin, Deutschland.',
+      rights: 'Princess Deladem Dagadu.',
       backToTop: 'Nach oben ↑',
     },
   },
