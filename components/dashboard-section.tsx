@@ -58,6 +58,14 @@ export function DashboardSection() {
           </a>
         </div>
 
+        <div className="mb-10 max-w-3xl space-y-4">
+          {t.dashboard.description.map((paragraph, i) => (
+            <p key={i} className="text-pretty leading-relaxed text-muted-foreground">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+
         <div className="overflow-hidden rounded-xl border border-border bg-card">
           <div
             ref={containerRef}

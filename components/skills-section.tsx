@@ -151,7 +151,7 @@ function SkillBadge({ label, meta }: { label: string; meta: Badge }) {
     )
   }
 
-  // Conceptual skill — neutral pill.
+  // Conceptual skill - neutral pill.
   return (
     <span className="inline-flex items-center rounded-md border border-border bg-secondary px-2.5 py-1.5 text-xs font-medium text-secondary-foreground transition-colors hover:bg-accent hover:text-accent-foreground">
       {label}

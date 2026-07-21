@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Princess Deladem Dagadu — Data & Marketing Analyst',
+  title: 'Princess Deladem Dagadu - Data & Marketing Analyst',
   description:
     'Portfolio of Princess Deladem Dagadu, a data and marketing analyst specializing in analytics, BI dashboards, and applied machine learning. Selected projects, skills, and experience.',
   icons: {

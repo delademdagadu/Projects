@@ -27,7 +27,6 @@ export function SiteHeader() {
   const nav = [
     { label: t.header.nav.about, href: '/about' },
     { label: t.header.nav.work, href: '/work' },
-    { label: t.header.nav.dashboard, href: '/dashboard' },
     { label: t.header.nav.skills, href: '/skills' },
     { label: t.header.nav.experience, href: '/experience' },
     { label: t.header.nav.contact, href: '/contact' },
