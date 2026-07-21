@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, Moon, Sun, X } from 'lucide-react'
+import { Logo } from '@/components/logo'
 import { useLanguage } from '@/components/language-provider'
 import { useTheme } from '@/components/theme-provider'
 import type { Language } from '@/lib/translations'
@@ -35,14 +36,10 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-4">
-        <Link href="/" className="flex items-center gap-3">
-          <img
-            src="/images/deladem-logo.png"
-            alt="Deladem Dagadu logo"
-            className="h-11 w-auto rounded-lg"
-          />
+        <Link href="/" className="flex items-center gap-3" aria-label="Home">
+          <Logo className="h-7 w-auto text-foreground" />
           <span className="sr-only">Princess Deladem Dagadu</span>
-          <span className="hidden text-xs text-muted-foreground sm:inline">
+          <span className="hidden border-l border-border pl-3 text-xs text-muted-foreground sm:inline">
             {t.header.role}
           </span>
         </Link>
