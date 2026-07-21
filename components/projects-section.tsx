@@ -61,8 +61,7 @@ const projectMeta: ProjectMeta[] = [
     track: 2,
     image: '/images/project-ab.png',
     tags: ['Python', 'A/B Testing', 'SciPy', 'Statistics'],
-    file: 'checkout_a_b_test_analysis.py',
-    isScript: true,
+    file: 'Checkout_A_B_Test_Analysis.ipynb',
   },
 ]
 
