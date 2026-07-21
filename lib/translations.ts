@@ -368,8 +368,8 @@ export const translations: Record<Language, Dictionary> = {
       subtitle:
         'Einige Projekte, die zeigen, wie ich von einer Fragestellung zu einem umgesetzten, messbaren Ergebnis komme.',
       viewNotebook: 'Notebook ansehen',
+      viewDashboard: 'Dashboard ansehen',
       code: 'Code',
-      trackLabel: 'Track',
       tracks: [
         {
           title: 'Data Science & ML',
@@ -377,59 +377,59 @@ export const translations: Record<Language, Dictionary> = {
             'Allgemeine technische Tiefe - Modellierung, Engineering, Evaluation.',
         },
         {
-          title: 'Marketing- & Business-Analytics',
+          title: 'Marketing & Business Analytics',
           description:
-            'Angewandte Arbeit mit Bezug zu Geschäftsergebnissen - Conversion, ROI, Entscheidungen.',
+            'Angewandte Arbeit mit Bezug zu Geschäftsergebnissen: Conversion, ROI, Entscheidungen.',
         },
       ],
       items: [
         {
           title: 'Lungenentzündungs-Erkennung aus Röntgenbildern des Brustkorbs',
           blurb:
-            '10 CNN-Konfigurationen (EfficientNetB0 vs. ResNet50, variierende Augmentierung, Lernrate, Batch-Größe) für die Lungenentzündungs-Klassifikation aus Röntgenbildern des Brustkorbs entwickelt und verglichen. Das beste Modell (ResNet50, Flip+Zoom-Augmentierung) erreichte 71 % Test-Genauigkeit, 92 % Recall und 71 % Precision auf der Pneumonie-Klasse sowie einen ROC-AUC von 0,84; stark genug als Triage-Priorisierungshilfe, nicht als eigenständiges Diagnosewerkzeug.',
-          metric: 'Medizinische Bildklassifikation mit einem CNN',
+            '10 CNN-Konfigurationen (EfficientNetB0 vs. ResNet50) für die Lungenentzündungs-Klassifikation aus Röntgenbildern verglichen. Das beste Modell erreichte 71 % Genauigkeit, 92 % Recall und einen ROC-AUC von 0,84, konzipiert als Triage-Priorisierungshilfe statt als eigenständige Diagnose.',
+          metric: 'ResNet50 · 92 % Recall · 0,84 ROC-AUC',
           caption: 'CNN-Klassifikation',
         },
         {
           title: 'Was sagen Kundinnen und Kunden wirklich? Sentiment-Klassifikation im großen Maßstab',
           blurb:
-            'Vier Ansätze verglichen - N-Gram+TF-IDF+Logistische Regression, feinabgestimmtes DistilBERT, SBERT+Logistische Regression (zwei Varianten) - für die binäre Sentiment-Klassifikation. Feinabgestimmtes DistilBERT gewann mit F1 ≈ 0,911, Genauigkeit ≈ 0,909, Precision ≈ 0,894, Recall ≈ 0,929 und schlug damit die N-Gram-Baseline (F1 ≈ 0,888) und SBERT+LR (F1 ≈ 0,809).',
-          metric: 'Textklassifikation über mehrere NLP-Modellvarianten',
+            'Vier Ansätze (N-Gram+TF-IDF, feinabgestimmtes DistilBERT, zwei SBERT-Varianten) für die binäre Sentiment-Klassifikation verglichen. Feinabgestimmtes DistilBERT gewann mit F1 ≈ 0,91 und schlug damit die N-Gram-Baseline und SBERT+LR.',
+          metric: 'DistilBERT · F1 ≈ 0,91',
           caption: 'NLP-Modellvergleich',
         },
         {
           title: 'Prognose des täglichen Umsatzes: eine End-to-End-ML-Pipeline',
           blurb:
-            'Eine Regressions-Pipeline zur Prognose des täglichen Umsatzes mit Lag-Features (1/7/30 Tage) und gleitenden Durchschnitten gebaut. Mehrere Modelle verglichen; die getunte Lasso-Regression (alpha=100) war das beste Modell, ausgewertet über MAE und RMSE. Konzipiert für die Bestandsplanung im Handel, um Über- und Unterbestände durch bessere Nachfrageprognosen zu reduzieren.',
-          metric: 'Regressions-Prognose von Rohdaten bis Modell',
+            'Eine Regressions-Pipeline zur Prognose des täglichen Umsatzes mit Lag-Features und gleitenden Durchschnitten gebaut. Die getunte Lasso-Regression (alpha=100) war das beste Modell, ausgewertet über MAE und RMSE, konzipiert für die Bestandsplanung im Handel.',
+          metric: 'Lasso-Regression · Nachfrageprognose im Handel',
           caption: 'Regressions-Prognose-Pipeline',
-        },
-        {
-          title: 'Leistungs- & Effizienztrends bei Oldtimern (1970er–80er)',
-          blurb:
-            'Einen Oldtimer-Datensatz für einen Restaurierungs- und Auktionshaus-Kunden analysiert und fünf gezielte Geschäftsfragen beantwortet: häufigste Zylinderzahl und deren durchschnittlicher Verbrauch (4 Zylinder, ~29,3 MPG), Top-Hersteller nach PS (Chrysler und Cadillac führen - relevant für die Ansprache leistungsorientierter Käufer), MPG-Verteilung nach Herkunftsland, Gewichtsspanne nach Herkunft (Japan am leichtesten und konstantesten, USA größte Spanne) und das Jahr mit der größten MPG-Verbesserung.',
-          metric: 'Erkenntnisgetriebene EDA für Restaurierung & Auktion',
-          caption: 'Explorative Datenanalyse',
         },
         {
           title: 'Das Einkaufsverhalten im Fashion-E-Commerce verstehen',
           blurb:
-            'Die Shopper-Daten eines Modehändlers untersucht, um zu ermitteln, was Kaufbetrag und Wiederkaufverhalten treibt: Demografie, Produktkategorie, Abo-Status, Gutschein-Nutzung. Schwache lineare Korrelation zwischen Alter/früheren Käufen und Ausgaben gefunden, aber Hinweise darauf, dass Abonnenten sich unter den häufigeren Wiederkäufern gruppieren und dass Gutscheincodes den durchschnittlichen Bestellwert nicht bewegten.',
+            'Die Shopper-Daten eines Modehändlers untersucht, um zu ermitteln, was Ausgaben und Wiederkaufverhalten treibt: Demografie, Produktkategorie, Abo-Status und Gutschein-Nutzung. Abonnenten gruppierten sich unter den häufigeren Wiederkäufern, während Gutscheincodes den Bestellwert nicht bewegten.',
           metric: 'Personalisierung für eine Fashion-E-Commerce-Plattform',
           caption: 'Fashion-E-Commerce',
         },
         {
+          title: 'Leistungs- & Effizienztrends bei Oldtimern (1970er-80er)',
+          blurb:
+            'Einen Oldtimer-Datensatz für einen Restaurierungs- und Auktionskunden analysiert und fünf Geschäftsfragen zu Kraftstoffeffizienz, PS-Spitzenreitern (Chrysler und Cadillac) sowie Gewichts- und Verbrauchsmustern nach Herkunftsland beantwortet.',
+          metric: 'Erkenntnisgetriebene EDA für Restaurierung & Auktion',
+          caption: 'Explorative Datenanalyse',
+        },
+        {
           title: 'Travel Booking Analytics Dashboard',
           blurb:
-            'Ein interaktives Tableau-Dashboard gebaut, das Reisebuchungen über 19 Reiseziele analysiert: Umsatz nach Reiseziel, monatliche Buchungstrends, Zufriedenheit nach Reiseziel und Kanal, Vorlaufzeit-Verteilung, Reisetyp-Aufschlüsselung und Kanal-Performance (Stornoquote vs. Umsatz nach Buchungskanal). Bündelt Reporting, das sonst mehrere statische Ansichten erfordern würde, in einem einzigen filterbaren Self-Service-Dashboard.',
+            'Interaktives Tableau-Dashboard zur Analyse von Buchungen über 19 Reiseziele: Umsatz nach Reiseziel, Saisonalität, Zufriedenheit nach Kanal, Vorlaufzeit, Reisetyp und Kanal-Performance, alles in einer filterbaren Self-Service-Ansicht.',
           metric: 'Interaktives BI für Reisebuchungs-Entscheidungen',
           caption: 'Interaktives Tableau-BI',
         },
         {
           title: 'Checkout-Flow-A/B-Test: Konvertiert ein einseitiger Checkout besser?',
           blurb:
-            'Eine A/B-Test-Methodik konzipiert und ausgewertet, die einen einseitigen Checkout mit einem mehrstufigen Flow vergleicht, mit simulierten Sitzungsdaten (~21.000 Sitzungen), um den vollständigen experimentellen Prozess von der Power-Analyse vorab bis zur Signifikanzprüfung zu demonstrieren. Einen Zwei-Stichproben-z-Test mit Wilson-Konfidenzintervallen durchgeführt und validiert, dass der Effekt über Geräte-Segmente (Mobil, Desktop, Tablet) konsistent blieb. Ergebnis: 25,1 % relative Conversion-Steigerung (p = 0,0008), wobei die Konfidenzintervalle beider Gruppen nicht überlappen.',
-          metric: '25,1 % Conversion-Steigerung, signifikant bei p = 0,0008',
+            'Einen Checkout-A/B-Test auf ~21.000 simulierten Sitzungen konzipiert und ausgewertet, von der Power-Analyse vorab bis zum Zwei-Stichproben-z-Test mit Wilson-Konfidenzintervallen. Ein einseitiger Checkout steigerte die Conversion um 25,1 % (p = 0,0008), konsistent über Geräte-Segmente.',
+          metric: '25,1 % Conversion-Steigerung · p = 0,0008',
           caption: 'Vollständige statistische Analyse',
         },
       ],

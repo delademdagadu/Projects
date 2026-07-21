@@ -1,24 +1,16 @@
 'use client'
 
 import Link from 'next/link'
-import {
-  ArrowUpRight,
-  Car,
-  FlaskConical,
-  GitBranch,
-  LineChart,
-  MessageSquare,
-  ShoppingBag,
-  Stethoscope,
-  type LucideIcon,
-} from 'lucide-react'
+import { ArrowUpRight, Code2 } from 'lucide-react'
 import { useLanguage } from '@/components/language-provider'
 
+const REPO = 'https://github.com/delademdagadu/Projects/blob/main'
 const NBVIEWER = 'https://nbviewer.org/github/delademdagadu/Projects/blob/main'
 
 type ProjectMeta = {
   track: 1 | 2
-  icon: LucideIcon
+  image: string
+  tags: string[]
   file?: string
   internalHref?: string
 }
@@ -27,37 +19,44 @@ type ProjectMeta = {
 const projectMeta: ProjectMeta[] = [
   {
     track: 1,
-    icon: Stethoscope,
+    image: '/images/project-pneumonia.png',
+    tags: ['Python', 'TensorFlow/Keras', 'CNN', 'Computer Vision'],
     file: 'Deep%20Learning%20Pipeline%20for%20Pneumonia%20Detection.ipynb',
   },
   {
     track: 1,
-    icon: MessageSquare,
+    image: '/images/project-nlp.png',
+    tags: ['Python', 'NLP', 'DistilBERT', 'scikit-learn'],
     file: 'Binary%20Sentiment%20Analysis%20using%20NLP%20Models%20.ipynb',
   },
   {
     track: 1,
-    icon: GitBranch,
+    image: '/images/project-forecast.png',
+    tags: ['Python', 'scikit-learn', 'Feature Engineering', 'Pipelines'],
     file: 'End_to_end_Machine_Learning_Pipeline.ipynb',
   },
   {
-    track: 1,
-    icon: Car,
-    file: 'Exploratory_Data_Analysis_of_Classic_Cars_for_Restoration_and_Auction.ipynb',
-  },
-  {
     track: 2,
-    icon: ShoppingBag,
+    image: '/images/project-churn.png',
+    tags: ['Python', 'Pandas', 'Segmentation', 'EDA'],
     file: 'Customer%20Behavior%20Analysis%20and%20Personalization%20for%20a%20Fashion%20E-Commerce%20Platform.ipynb',
   },
   {
     track: 2,
-    icon: LineChart,
+    image: '/images/project-eda.png',
+    tags: ['Python', 'Pandas', 'Matplotlib', 'EDA'],
+    file: 'Exploratory_Data_Analysis_of_Classic_Cars_for_Restoration_and_Auction.ipynb',
+  },
+  {
+    track: 2,
+    image: '/images/project-bi.png',
+    tags: ['Tableau', 'BI', 'Dashboards'],
     internalHref: '/dashboard',
   },
   {
     track: 2,
-    icon: FlaskConical,
+    image: '/images/project-ab.png',
+    tags: ['Python', 'A/B Testing', 'SciPy', 'Statistics'],
     file: 'Checkout_A_B_Test_Analysis.ipynb',
   },
 ]
@@ -67,8 +66,9 @@ export function ProjectsSection() {
 
   const items = t.projects.items.map((item, i) => {
     const meta = projectMeta[i]
-    const href = meta.internalHref ?? `${NBVIEWER}/${meta.file}`
-    return { ...item, ...meta, href }
+    const demoHref = meta.internalHref ?? `${NBVIEWER}/${meta.file}`
+    const codeHref = meta.file ? `${REPO}/${meta.file}` : undefined
+    return { ...item, ...meta, demoHref, codeHref }
   })
 
   return (
@@ -83,14 +83,14 @@ export function ProjectsSection() {
           </p>
         </header>
 
-        <div className="space-y-14">
+        <div className="space-y-16">
           {t.projects.tracks.map((track, ti) => {
             const trackNumber = (ti + 1) as 1 | 2
             const trackItems = items.filter((p) => p.track === trackNumber)
 
             return (
               <div key={track.title}>
-                <div className="mb-6">
+                <div className="mb-8">
                   <h3 className="text-xl font-semibold tracking-tight text-foreground">
                     {track.title}
                   </h3>
@@ -99,51 +99,82 @@ export function ProjectsSection() {
                   </p>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-8 sm:grid-cols-2">
                   {trackItems.map((project) => {
-                    const Icon = project.icon
                     const isInternal = Boolean(project.internalHref)
-                    const cardClass =
-                      'group flex flex-col rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/40 hover:bg-secondary/40'
-                    const content = (
-                      <>
-                        <div className="mb-5 flex items-start justify-between">
-                          <Icon
-                            className="size-6 text-primary"
-                            aria-hidden="true"
+                    return (
+                      <article
+                        key={project.title}
+                        className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card"
+                      >
+                        <div className="aspect-[16/10] overflow-hidden border-b border-border bg-secondary">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={project.image || '/placeholder.svg'}
+                            alt={`Preview of the ${project.title} project`}
+                            className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
                           />
-                          <ArrowUpRight className="size-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
                         </div>
-                        <h4 className="text-pretty font-medium leading-snug text-foreground">
-                          {project.title}
-                        </h4>
-                        <p className="mt-1 text-xs font-medium uppercase tracking-wide text-primary/80">
-                          {project.caption}
-                        </p>
-                        <p className="mt-3 text-pretty text-sm leading-relaxed text-muted-foreground">
-                          {project.blurb}
-                        </p>
-                      </>
-                    )
 
-                    return isInternal ? (
-                      <Link
-                        key={project.title}
-                        href={project.href}
-                        className={cardClass}
-                      >
-                        {content}
-                      </Link>
-                    ) : (
-                      <a
-                        key={project.title}
-                        href={project.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={cardClass}
-                      >
-                        {content}
-                      </a>
+                        <div className="flex flex-1 flex-col p-6">
+                          <h4 className="text-pretty text-lg font-medium leading-snug tracking-tight text-foreground">
+                            {project.title}
+                          </h4>
+                          <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                            {project.blurb}
+                          </p>
+
+                          <p className="mt-4 text-sm font-medium text-primary">
+                            {project.metric}
+                          </p>
+
+                          <ul className="mt-4 flex flex-wrap gap-1.5">
+                            {project.tags.map((tag) => (
+                              <li
+                                key={tag}
+                                className="rounded-md bg-secondary px-2 py-1 font-mono text-xs text-secondary-foreground"
+                              >
+                                {tag}
+                              </li>
+                            ))}
+                          </ul>
+
+                          <div className="mt-6 flex items-center gap-4 border-t border-border/60 pt-4 text-sm">
+                            {isInternal ? (
+                              <Link
+                                href={project.demoHref}
+                                className="inline-flex items-center gap-1 font-medium text-foreground transition-colors hover:text-primary"
+                              >
+                                {t.projects.viewDashboard}
+                                <ArrowUpRight className="size-4" />
+                              </Link>
+                            ) : (
+                              <>
+                                <a
+                                  href={project.demoHref}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1 font-medium text-foreground transition-colors hover:text-primary"
+                                >
+                                  {t.projects.viewNotebook}
+                                  <ArrowUpRight className="size-4" />
+                                </a>
+                                {project.codeHref ? (
+                                  <a
+                                    href={project.codeHref}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-1 text-muted-foreground transition-colors hover:text-foreground"
+                                  >
+                                    <Code2 className="size-4" />
+                                    {t.projects.code}
+                                  </a>
+                                ) : null}
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      </article>
                     )
                   })}
                 </div>
